@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "city.connections.file.path",
+  "type": "java.lang.String",
+  "description": "A description for 'city.connections.file.path'"
+}]}
