@@ -1,5 +1,6 @@
 ## Introduction
- this dcoument outlines 
+ This dcoument outlines 
+ 
 *Design
 *Implementation
 *Test
