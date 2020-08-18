@@ -15,8 +15,8 @@ This dcoument outlines
 ## Prerequisites
 To run this application, below software installations are required
 
-> 1) *Java* 8 or above
-> 2) *Maven* 
+> 1. *Java* 8 or above
+> 2, *Maven* 
 
 **NOTE** *If you are going to run Docker image, then docker engine installation is required*
  
@@ -24,8 +24,8 @@ To run this application, below software installations are required
 
 > The Proposed solution is using Graph traversal mechanism to identify if a path exists between two vertices. 
 > The solution has 2 parts
-> 1) Read the city data from file stored in classpath. whose location is mentioned via application.properties file
-> 2) By using the BreadthFirstSearch(BFS) traversal algorithm, iteratively find if 2 cities are connected 
+> 1. Read the city data from file stored in classpath. whose location is mentioned via application.properties file
+> 2. By using the BreadthFirstSearch(BFS) traversal algorithm, iteratively find if 2 cities are connected 
 
 
 ## Implementation
