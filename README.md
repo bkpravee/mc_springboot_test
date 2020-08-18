@@ -72,8 +72,11 @@ java -jar target/city-connections-0.0.1-SNAPSHOT.jar
 The API can be tested using an REST API testing tool or as it is a GET only operation it can also be tested via browser
  
 ```
+'origin' and 'destination' query parameters can be of any case.
+
 http://localhost:8080/connected?origin=NEW YORK&destination=newark
-or 
+
+OR 
 
 http://localhost:8080/connected?origin=boston&destination=newark
 ```
