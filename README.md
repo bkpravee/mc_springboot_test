@@ -103,7 +103,7 @@ http://localhost:8081/actuator/loggers
 
 ## Dockerization
 
-the *DockerFile* is part of the source, to create a docker image
+the *DockerFile* is part of the source, to create a docker image run
 ```docker
 docker build -t <image name> .
 ```
