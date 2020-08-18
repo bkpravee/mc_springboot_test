@@ -15,8 +15,8 @@ This dcoument outlines
 ## Prerequisites
 To run this application, below software installations are required
 
-1) *Java* 8 or above
-2) *Maven* 
+> 1) *Java* 8 or above
+> 2) *Maven* 
 
 **NOTE** *If you are going to run Docker image, then docker engine installation is required*
  
@@ -30,11 +30,11 @@ To run this application, below software installations are required
 
 ## Implementation
 this sample application is a  maven project which include
-	1. Custom error handling
-	2. Swagger API annotations
-	3. Unit test cases
-	4. health, info and monitoring metrics of API traffic
-	5. Docker image creation to be used via docker engine or orchestrated via kubernetes
+> 1. Custom error handling
+> 2. Swagger API annotations
+> 3. Unit test cases
+> 4. health, info and monitoring metrics of API traffic
+> 5. Docker image creation to be used via docker engine or orchestrated via kubernetes
 
 ## Installation & Run
   
