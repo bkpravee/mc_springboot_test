@@ -68,23 +68,12 @@ java -jar target/city-connections-0.0.1-SNAPSHOT.jar
 ```
  
 ## API Testing
+The API can be tested using an REST API testing tool or as it is a GET only operation it can also be tested via browser
  
-```command line
-	java -jar .\oauth2-client-sample\target\oauth2-client-sample-0.0.1-SNAPSHOT.jar
+```
+http://localhost:8080/connected?destination=boston&origin=newark
 
 ```
-##Dockerization
-
-the *DockerFile* is part of the source, to create a docker image
-```docker
-docker build -t <image name> .
-```
-
-to the run the docker image from docker console at port 8888
-```docker
-docker run -p 8888:8080 <image name>
-```
-
 ## Swagger UI
 the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
 ```
@@ -100,12 +89,25 @@ management.endpoints.jmx.exposure.include=health,info,env,beans
 the monitoring can be seen
 ```
 for health
-http://localhost:8082/actuator/health
+http://localhost:8081/actuator/health
 for metrics
-http://localhost:8082/actuator/metrics
+http://localhost:8081/actuator/metrics
 for loggers
-http://localhost:8082/actuator/loggers
+http://localhost:8081/actuator/loggers
 
 ```
+
+## Dockerization
+
+the *DockerFile* is part of the source, to create a docker image
+```docker
+docker build -t <image name> .
+```
+
+to the run the docker image from docker console at port 8888
+```docker
+docker run -p 8888:8080 <image name>
+```
+
 
 **NOTE** *For illustration purposes the API response is written to console log..*
