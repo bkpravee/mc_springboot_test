@@ -42,41 +42,70 @@ this sample application is a  maven project which include
 clone the github project via URL
 
 ```git
-> git clone https://github.com/bkpravee/mc_springboot_test.git
+git clone https://github.com/bkpravee/mc_springboot_test.git
 
 ```
  2. do  a maven clean install to build the source code
 ```maven
-    mvn clean install
+mvn clean install
 
 ```
 3. The UNIT testsuite can be executed by
 ```maven
-  mvn test
+mvn test
+
 ```
 
 4. Run the application using maven Spring Boot plugin
 ```maven
-    mvn spring-boot:run 
- ```
+mvn spring-boot:run 
+```
   OR if you are going to run the executable jar from the command line 
 
 ```command line
- 	java -jar target/city-connections-0.0.1-SNAPSHOT.jar
- ```
+java -jar target/city-connections-0.0.1-SNAPSHOT.jar
+
+```
  
 ## API Testing
-To run the sample application, run the executable jar located at *./oauth2-client-sample/target/oauth-factset-client-0.0.1-SNAPSHOT.jar*
-
-1. 
+ 
 ```command line
 	java -jar .\oauth2-client-sample\target\oauth2-client-sample-0.0.1-SNAPSHOT.jar
 
 ```
+##Dockerization
+
+the *DockerFile* is part of the source, to create a docker image
+```docker
+docker build -t <image name> .
+```
+
+to the run the docker image from docker console at port 8888
+```docker
+docker run -p 8888:8080 <image name>
+```
+
 ## Swagger UI
 the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
 ```
 http://localhost:8081/swagger-ui.html
+```
+## API monitoring/metrics
+to activate monitoring, spring-actuator dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server port.
+```
+management.server.port=8081
+management.endpoints.web.exposure.include=*
+management.endpoints.jmx.exposure.include=health,info,env,beans
+```
+the monitoring can be seen
+```
+for health
+http://localhost:8082/actuator/health
+for metrics
+http://localhost:8082/actuator/metrics
+for loggers
+http://localhost:8082/actuator/loggers
+
 ```
 
 **NOTE** *For illustration purposes the API response is written to console log..*
