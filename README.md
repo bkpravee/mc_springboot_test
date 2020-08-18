@@ -2,14 +2,13 @@
 This document outlines the details as well as best practices in REST API that evaluates if 2 cities are connected based in origin and destination inputs using spring boot. This project also includes Swagger API documentation, UNIT testSuite, Docker containerization to be used in container based environments in the cloud as well as application monitoring as well as metrics.
 
 This dcoument outlines 
-1. Design Solution
-2. Implementation with custom error handling
-3. Test
-4. Run
-5. Management & Monitoring (via Spring Boot Actuators)
-6. Documentation with Swagger
-7. Docker Containerization to be run with Container engines
-
+> 1. Design Solution
+> 2. Implementation with custom error handling
+> 3. Test
+> 4. Run
+> 5. Management & Monitoring (via Spring Boot Actuators)
+> 6. Documentation with Swagger
+> 7. Docker Containerization to be run with Container engines
 
  
 ## Prerequisites
