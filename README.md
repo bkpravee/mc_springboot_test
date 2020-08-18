@@ -83,20 +83,23 @@ the Swagger UI API documentation can be seen a the below URL. The API testing al
 http://localhost:8081/swagger-ui.html
 ```
 ## API monitoring/metrics
-to activate monitoring, spring-actuator dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server port.
+to activate monitoring, *spring-actuator* dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server port.
 ```
 management.server.port=8081
 management.endpoints.web.exposure.include=*
 management.endpoints.jmx.exposure.include=health,info,env,beans
 ```
-the monitoring can be seen
+the monitoring metrics/health/info are available at following URL locations
 ```
-for health
+application health can be seen at 
 http://localhost:8081/actuator/health
+
 for metrics
 http://localhost:8081/actuator/metrics
+
 for info
 http://localhost:8081/actuator/info
+
 for loggers
 http://localhost:8081/actuator/loggers
 
