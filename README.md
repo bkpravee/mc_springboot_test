@@ -7,13 +7,18 @@ This dcoument outlines
 > 3. Test
 > 4. Run
 > 5. Management & Monitoring (via Spring Boot Actuators)
-> 6. Documentation with Swagger
+> 6. API Documentation with Swagger UI
 > 7. Docker Containerization to be run with Container engines
+
 
  
 ## Prerequisites
- 1) To run this application, *Java* 8+ and *Maven* software installations are required
- 2) clone from GitHub URL
+To run this application, below software installations are required
+
+1) *Java* 8 or above
+2) *Maven* 
+
+**NOTE** *If you are going to run Docker image, then docker engine installation is required*
  
 ## Design Solution
 
@@ -33,47 +38,34 @@ this sample application is a  maven project which include
 
 ## Installation & Run
   
- 1. first run maven command from the root folder *oauth2-client-parent*
- 
-  ```maven
-  mvn clean package spring-boot:repackage
+ 1. To install and run goto the directory in which you want to install the project.
+clone the github project via URL
+
+```git
+> git clone https://github.com/bkpravee/mc_springboot_test.git
+
+```
+ 2. do  a maven clean install to build the source code
+```maven
+    mvn clean install
+
+```
+3. The UNIT testsuite can be executed by
+```maven
+  mvn test
+```
+
+4. Run the application using maven Spring Boot plugin
+```maven
+    mvn spring-boot:run 
  ```
-  This compiles all the maven modules and packages them into executable jar files as well dependent pom and runtime libraries
-  command line application is ready to run, the executable jar file is located at *./oauth2-client-sample/target/oauth-factset-client-0.0.1-SNAPSHOT.jar*
+  OR if you are going to run the executable jar from the command line 
 
- **NOTE** *spring-boot:repackage* it is an assembly plugin used to assemble required binaries to make an executable application, but it is not a spring-boot application.
- successful maven packaging will show below log message in the command/terminal window
- ````maven log
-	[INFO] oauth2-client-parent ............................... SUCCESS [  0.865 s]
-	[INFO] oauth2-client-sdk .................................. SUCCESS [  2.905 s]
-	[INFO] oauth2-client-sample ............................... SUCCESS [  1.321 s]
-	[INFO] ------------------------------------------------------------------------
-````
-After successful maven packaging, follow below setup steps before executing the sample test cases..
-  
-  2. Register a client application in dev portal, and download the resultant JSON
-  
-  3. please set the downloaded JSON file path as an environment variable *oauth2.client.file.path*
-  
-	for example
-	```environment variable
-	oauth2.client.file.path=C:\Downloads\client.json
-	```
-  4. make sure the download JSON is validated and contains following elments
-  
-```json
-
-```
- 5. In case if client application in dev portal is created wih 'use own signing keys' option, the JSON should have an additional element 
- *private_key_pem_path*. Its value should contain the full file path to the private key location.
+```command line
+ 	java -jar target/city-connections-0.0.1-SNAPSHOT.jar
+ ```
  
- **NOTE** It can be seen in the below JSON, that the *private* value is null, because only *public* is used during client registraion in dev portal. Private key is essential to sign token requests
- 
-```json
-
-```
-
-## Test Run
+## API Testing
 To run the sample application, run the executable jar located at *./oauth2-client-sample/target/oauth-factset-client-0.0.1-SNAPSHOT.jar*
 
 1. 
@@ -81,4 +73,10 @@ To run the sample application, run the executable jar located at *./oauth2-clien
 	java -jar .\oauth2-client-sample\target\oauth2-client-sample-0.0.1-SNAPSHOT.jar
 
 ```
+## Swagger UI
+the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
+```
+http://localhost:8081/swagger-ui.html
+```
+
 **NOTE** *For illustration purposes the API response is written to console log..*
