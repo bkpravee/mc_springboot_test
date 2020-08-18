@@ -80,7 +80,7 @@ http://localhost:8080/connected?origin=boston&destination=newark
 ## Swagger UI
 the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
 ```
-http://localhost:8081/swagger-ui.html
+http://localhost:8080/swagger-ui.html
 ```
 ## API monitoring/metrics
 to activate monitoring, *spring-actuator* dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server port.
