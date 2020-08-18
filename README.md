@@ -3,7 +3,7 @@ This document outlines the details as well as best practices in REST API that ev
 
 This dcoument outlines 
 > 1. Design Solution
-> 2. Implementation with custom error handling
+> 2. Implementation
 > 3. Test
 > 4. Run
 > 5. Management & Monitoring (via Spring Boot Actuators)
