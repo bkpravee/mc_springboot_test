@@ -118,4 +118,4 @@ docker run -p 8888:8080 <image name>
 ```
 
 
-**NOTE** *For illustration purposes the API response is written to console log..*
+**NOTE** *For illustration purposes the log4j logs are written to STD console log..*, but can be isolated and directed to respective file Appenders
