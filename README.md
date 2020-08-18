@@ -29,8 +29,9 @@ To run this application, below software installations are required
 
 
 ## Implementation
-this sample application is a  maven project which include
-> 1. Custom error handling
+this sample application is a  maven project with implementations for below.
+
+> 1. Custom Exception handling
 > 2. Swagger API annotations
 > 3. Unit test cases
 > 4. health, info and monitoring metrics of API traffic
