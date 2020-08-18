@@ -16,7 +16,7 @@ This dcoument outlines
 To run this application, below software installations are required
 
 > 1. *Java* 8 or above
-> 2, *Maven* 
+> 2. *Maven* 
 
 **NOTE** *If you are going to run Docker image, then docker engine installation is required*
  
@@ -24,8 +24,8 @@ To run this application, below software installations are required
 
 > The Proposed solution is using Graph traversal mechanism to identify if a path exists between two vertices. 
 > The solution has 2 parts
-> 1. Read the city data from file stored in classpath. whose location is mentioned via application.properties file
-> 2. By using the BreadthFirstSearch(BFS) traversal algorithm, iteratively find if 2 cities are connected 
+> 1. Read the input data from a file stored in classpath. whose filename is mentioned in resource file application.properties
+> 2. By using the Breadth First Search(BFS) traversal algorithm, iteratively find if 2 cities are connected 
 
 
 ## Implementation
@@ -71,8 +71,10 @@ java -jar target/city-connections-0.0.1-SNAPSHOT.jar
 The API can be tested using an REST API testing tool or as it is a GET only operation it can also be tested via browser
  
 ```
-http://localhost:8080/connected?destination=boston&origin=newark
+http://localhost:8080/connected?origin=NEW YORK&destination=newark
+or 
 
+http://localhost:8080/connected?origin=boston&destination=newark
 ```
 ## Swagger UI
 the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
@@ -92,6 +94,8 @@ for health
 http://localhost:8081/actuator/health
 for metrics
 http://localhost:8081/actuator/metrics
+for info
+http://localhost:8081/actuator/info
 for loggers
 http://localhost:8081/actuator/loggers
 
