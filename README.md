@@ -1,5 +1,5 @@
 ## Introduction
-This document outlines the details as well as best practices in developing spring boot based REST API application that evaluates if 2 cities are connected based on origin and destination inputs. This project also includes Swagger API documentation, UNIT testSuite, Monitoring metrics (API statistics), Docker containerization to be used in container based environments such as docker, kubernetes, pivotal cloud foundry etc.in the cloud.
+This document outlines the details as well as best practices in developing spring boot based REST API application that evaluates if 2 cities are connected based on origin and destination inputs. This project also includes Swagger API documentation, UNIT testSuite, Monitoring metrics (API statistics), Docker containerization to be used in cloud based container environments such as docker, kubernetes, pivotal cloud foundry etc.
 
 This dcoument outlines 
 > 1. Design Solution
@@ -18,14 +18,14 @@ To run this application, below software installations are required
 > 1. *Java* 8 or above
 > 2. *Maven* 
 
-**NOTE** *If you are going to run Docker image, then docker engine installation is required*
+**NOTE** *To run Docker images, then Docker engine installation is required*
  
 ## Design Solution
 
 > The Proposed solution is using Graph traversal mechanism to identify if a path exists between two vertices. 
 > The solution has 2 parts
-> 1. Read the input data from a file stored in classpath. whose filename is mentioned in resource file application.properties
-> 2. By using the Breadth First Search(BFS) traversal algorithm, iteratively find if 2 cities are connected 
+> 1. Read the input data from a file stored in classpath and load into an application scoped Map. The input filename is mentioned in resource file application.properties
+> 2. By using the Breadth First Search(BFS) graph traversal algorithm, iteratively find if 2 cities are connected 
 
 
 ## Implementation
@@ -69,7 +69,7 @@ java -jar target/city-connections-0.0.1-SNAPSHOT.jar
 ```
  
 ## API Testing
-The API can be tested using an REST API testing tool or as it is a GET only operation it can also be tested via browser
+The API can be tested using an REST API testing tools such as RESTClient, POSTMAN, SOAPUI etc. or as it is a HTTP GET operation it can also be tested via browser
  
 ```
 'origin' and 'destination' query parameters can be of any case.
@@ -86,7 +86,7 @@ the Swagger UI API documentation can be seen a the below URL. The API testing al
 http://localhost:8080/swagger-ui.html
 ```
 ## API monitoring/metrics
-to activate monitoring, *spring-actuator* dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server port.
+to activate monitoring, *spring-actuator* dependency is reqruied in *pom.xml*. (it is already added..) and also *application.properties* need to configured. if listener port is not configured monitoring is available at default server listener port (in case of tomcat it is 8080).
 ```
 management.server.port=8081
 management.endpoints.web.exposure.include=*
@@ -110,7 +110,7 @@ http://localhost:8081/actuator/loggers
 
 ## Dockerization
 
-the *DockerFile* is part of the source, to create a docker image run
+the *DockerFile* is included as part of the project files, to create a docker image run
 ```docker
 docker build -t <image name> .
 ```
