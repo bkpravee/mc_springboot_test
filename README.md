@@ -81,6 +81,7 @@ OR
 http://localhost:8080/connected?origin=boston&destination=newark
 ```
 ## Swagger UI
+this API design is done by bottom to up approach (java implementation first and Swagger generation later) where as API first approach or top-down approach invloves design swagger specification first and use openAPI codegen tools/plugin to generate artifacts to be implemented later.
 the Swagger UI API documentation can be seen a the below URL. The API testing also can be executed from swagger UI *try it now* option
 ```
 http://localhost:8080/swagger-ui.html
